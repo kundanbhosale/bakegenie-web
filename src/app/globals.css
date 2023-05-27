@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer components {
   .btn-primary {
     @apply rounded-md bg-primary-600 px-4 py-2 text-sm text-white hover:bg-primary-800 focus:bg-primary-800 focus:outline-none disabled:bg-primary-200 disabled:text-primary-500 md:text-base;
@@ -16,19 +15,17 @@ body {
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: subpixel-antialiased;
   font-feature-settings: 'rlig' 1, 'calt' 1, 'ss01' 1;
-background-color: #FFEAD9;
-  @apply m-0 p-0 overflow-x-hidden text-base text-black-800 dark:bg-black-500 dark:text-gray-300;
+  background-color: #ffead9;
+  @apply m-0 overflow-x-hidden p-0 text-base text-black-800 dark:bg-black-500 dark:text-gray-300;
 }
 
 * {
   scrollbar-width: thin;
   box-sizing: border-box;
-
 }
 *:focus {
   outline: none;
 }
-
 
 *::-webkit-scrollbar {
   height: 0.4rem;
@@ -45,25 +42,24 @@ background-color: #FFEAD9;
 }
 
 h1 {
-  @apply sm:text-7xl font-bold lg:text-5xl text-4xl xl:text-6xl 2xl:text-7xl;
+  @apply text-4xl font-bold sm:text-7xl lg:text-5xl xl:text-6xl 2xl:text-7xl;
 }
-
-
 
 /* Coming soon */
-.notify-wrapper input{
+.notify-wrapper input,
+.notify-wrapper p {
   width: calc(100% - 150px);
 }
-.notify-wrapper button{
+.notify-wrapper button {
   width: 150px;
 }
 
-@media (max-width:1024){
-
-  .notify-wrapper input{
+@media (max-width: 1024px) {
+  .notify-wrapper input,
+  .notify-wrapper p {
     width: calc(100% - 100px);
   }
-  .notify-wrapper button{
+  .notify-wrapper button {
     width: 100px;
   }
 }

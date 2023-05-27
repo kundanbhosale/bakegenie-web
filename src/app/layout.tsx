@@ -2,23 +2,21 @@ import { Metadata } from 'next'
 import './globals.css'
 import { Pangolin } from 'next/font/google'
 
-const mali = Pangolin({ subsets: ['latin'], weight:['400'] })
+const font = Pangolin({ subsets: ['latin'], weight: ['400'] })
 
-const name = "Bakegenie - AI Powered Assitant for Bakers"
-const desc = 'Maximize efficiency and enhance customer satisfaction with Bakegenie, an advanced bakery software solution. Automate customer messaging, streamline order management, and effortlessly handle custom orders with the power of AI. Elevate your bakery business to new heights with Bakegenie.'
+const name = 'Bakegenie - AI Powered Assitant for Bakers'
+const desc =
+  'Maximize efficiency and enhance customer satisfaction with Bakegenie, an advanced bakery software solution. Automate customer messaging, streamline order management, and effortlessly handle custom orders with the power of AI. Elevate your bakery business to new heights with Bakegenie.'
 
 export const metadata: Metadata = {
   title: {
     default: name,
     template: `%s | Bakegenie`,
   },
-  description:desc,
+  description: desc,
   icons: {
     apple: '/favicon/apple-touch-icon.png',
-    icon: [
-      '/favicon/favicon-16x16.png',
-      '/favicon/favicon-32x32.png',
-    ],
+    icon: ['/favicon/favicon-16x16.png', '/favicon/favicon-32x32.png'],
     shortcut: '/favicon/favicon.ico',
   },
   manifest: '/favicon/site.webmanifest',
@@ -41,8 +39,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={mali.className}>{children}</body>
+    <html lang='en'>
+      <body className={font.className}>{children}</body>
     </html>
   )
 }
