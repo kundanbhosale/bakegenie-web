@@ -66,7 +66,7 @@ const Input = () => {
         data: 'Invalid Email!',
       })
     }
-    const { error } = await addEmail(email)
+    const { error } = await addEmail(email.toLowerCase())
     setLoading(false)
     if (error) {
       if (error.code === 'permission-denied') {
