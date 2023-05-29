@@ -15,8 +15,7 @@ body {
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: subpixel-antialiased;
   font-feature-settings: 'rlig' 1, 'calt' 1, 'ss01' 1;
-  background-color: #ffead9;
-  @apply m-0 overflow-x-hidden p-0 text-base text-black-800 dark:bg-black-500 dark:text-gray-300;
+  @apply m-0 overflow-x-hidden bg-primary-100 p-0 text-base text-black-800 dark:bg-black-500 dark:text-gray-300;
 }
 
 * {
@@ -43,6 +42,9 @@ body {
 
 h1 {
   @apply text-4xl font-bold sm:text-7xl lg:text-5xl xl:text-6xl 2xl:text-7xl;
+}
+h2 {
+  @apply text-3xl font-bold sm:text-6xl lg:text-4xl xl:text-5xl 2xl:text-6xl;
 }
 
 /* Coming soon */

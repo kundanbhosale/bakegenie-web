@@ -92,7 +92,7 @@ const Input = () => {
   return (
     <Fragment>
       <div
-        className='notify-wrapper m-auto flex overflow-hidden rounded-full bg-white p-1 ring-2 ring-primary-700 lg:m-0'
+        className='mx-auto flex overflow-hidden rounded-full bg-white p-1 text-black-800 ring-2 ring-primary-700 lg:m-0'
         style={{ width: 'fit-content' }}
       >
         {data ? (

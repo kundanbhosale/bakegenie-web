@@ -10,17 +10,17 @@ module.exports = {
     container: false,
   },
   theme: {
-    screens:{
-      'sm': '640px',
+    screens: {
+      sm: '640px',
       // => @media (min-width: 640px) { ... }
 
-      'md': '768px',
+      md: '768px',
       // => @media (min-width: 768px) { ... }
 
-      'lg': '1050px',
+      lg: '1050px',
       // => @media (min-width: 1024px) { ... }
 
-      'xl': '1280px',
+      xl: '1280px',
       // => @media (min-width: 1280px) { ... }
 
       '2xl': '1536px',
@@ -29,17 +29,17 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          '50': '#fef7ee',
-          '100': '#fcedd8',
-          '200': '#f8d7b0',
-          '300': '#f3ba7e',
-          '400': '#ee9349',
-          '500': '#e97626',
-          '600': '#da5d1c',
-          '700': '#b54619',
-          '800': '#983c1d',
-          '900': '#753119',
-          '950': '#3f160b',
+          50: '#fef7ee',
+          100: '#ffead9',
+          200: '#FFDECB',
+          300: '#f3ba7e',
+          400: '#ee9349',
+          500: '#e97626',
+          600: '#da5d1c',
+          700: '#b54619',
+          800: '#983c1d',
+          900: '#753119',
+          950: '#3f160b',
         },
         black: {
           50: '#f7f7f7',
@@ -63,8 +63,7 @@ module.exports = {
       DEFAULT: '1rem',
       sm: '2rem',
     },
-    
   },
-  
+
   plugins: [],
 }

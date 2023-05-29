@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import './globals.css'
 import { Pangolin } from 'next/font/google'
+import { ViewportProvider } from '../context/viewport'
 
 const font = Pangolin({ subsets: ['latin'], weight: ['400'] })
 
@@ -39,8 +40,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang='en'>
-      <body className={font.className}>{children}</body>
-    </html>
+    <ViewportProvider>
+      <html lang='en'>
+        <body className={font.className} style={{ opacity: '0' }}>
+          {children}
+        </body>
+      </html>
+    </ViewportProvider>
   )
 }

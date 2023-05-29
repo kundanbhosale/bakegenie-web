@@ -1,7 +1,14 @@
 'use client' // This is a client component 👈🏽
-import { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
-const useViewPort = () => {
+const viewportContext = React.createContext({
+  width: 0,
+  height: 0,
+  screenWidth: 0,
+  screenHeight: 0,
+})
+
+const ViewportProvider = ({ children }: { children: React.ReactNode }) => {
   const [width, setWidth] = useState(0)
   const [height, setHeight] = useState(0)
   const [screenWidth, setScreenWidth] = useState(0)
@@ -12,6 +19,7 @@ const useViewPort = () => {
     setHeight(window.innerHeight)
     setScreenWidth(window.screen.width)
     setScreenHeight(window.screen.height)
+    document.body.style.opacity = '1'
   }
 
   useEffect(() => {
@@ -26,12 +34,22 @@ const useViewPort = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [width, height])
 
-  return {
-    width,
-    height,
-    screenWidth,
-    screenHeight,
-  }
+  return (
+    <viewportContext.Provider
+      value={{
+        width,
+        height,
+        screenWidth,
+        screenHeight,
+      }}
+    >
+      {children}
+    </viewportContext.Provider>
+  )
 }
 
-export default useViewPort
+const useViewport = () => {
+  return React.useContext(viewportContext)
+}
+
+export { ViewportProvider, useViewport }

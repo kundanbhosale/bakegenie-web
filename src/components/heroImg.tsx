@@ -1,19 +1,24 @@
 'use client' // This is a client component 👈🏽
 
 import React from 'react'
-import useViewPort from '../hooks/useViewport'
 import Image from 'next/image'
+import { useViewport } from '../context/viewport'
 
 const HeroImg = () => {
-  const { width } = useViewPort()
+  const { width, height } = useViewport()
   const imgSize = width > 1440 ? 1200 : width > 1280 ? 1000 : 800
   if (!width) return null
+  console.log(height)
   return (
     <div
       className='md:absolute'
       style={
         width > 1024
-          ? { width: imgSize, top: '10%', height: 'auto' }
+          ? {
+              width: imgSize,
+              top: width <= 1500 ? '-5%' : '10%',
+              height: 'auto',
+            }
           : {
               backgroundImage: `url('./hero.png')`,
               width: 'calc(100vw + 3%)',
