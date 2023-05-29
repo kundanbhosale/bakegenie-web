@@ -2,6 +2,8 @@ import { Metadata } from 'next'
 import './globals.css'
 import { Pangolin } from 'next/font/google'
 import { ViewportProvider } from '../context/viewport'
+import { firebaseConfig } from '../firebase/config'
+import { initializeApp } from 'firebase/app'
 
 const font = Pangolin({ subsets: ['latin'], weight: ['400'] })
 
@@ -39,6 +41,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  initializeApp(firebaseConfig)
   return (
     <ViewportProvider>
       <html lang='en'>
