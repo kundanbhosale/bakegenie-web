@@ -2,8 +2,7 @@ import { Metadata } from 'next'
 import './globals.css'
 import { Pangolin } from 'next/font/google'
 import { ViewportProvider } from '../context/viewport'
-import { firebase_app } from '../firebase/config'
-import { initAnalytics } from '../firebase/analytics'
+import { FirebaseTrackingProvider } from '../context/analytics'
 
 const font = Pangolin({ subsets: ['latin'], weight: ['400'] })
 
@@ -41,14 +40,15 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  initAnalytics(firebase_app)
   return (
-    <ViewportProvider>
-      <html lang='en'>
-        <body className={font.className} style={{ opacity: '0' }}>
-          {children}
-        </body>
-      </html>
-    </ViewportProvider>
+    <FirebaseTrackingProvider>
+      <ViewportProvider>
+        <html lang='en'>
+          <body className={font.className} style={{ opacity: '0' }}>
+            {children}
+          </body>
+        </html>
+      </ViewportProvider>
+    </FirebaseTrackingProvider>
   )
 }

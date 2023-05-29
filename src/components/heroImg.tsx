@@ -5,10 +5,9 @@ import Image from 'next/image'
 import { useViewport } from '../context/viewport'
 
 const HeroImg = () => {
-  const { width, height } = useViewport()
+  const { width } = useViewport()
   const imgSize = width > 1440 ? 1200 : width > 1280 ? 1000 : 800
   if (!width) return null
-  console.log(height)
   return (
     <div
       className='md:absolute'
